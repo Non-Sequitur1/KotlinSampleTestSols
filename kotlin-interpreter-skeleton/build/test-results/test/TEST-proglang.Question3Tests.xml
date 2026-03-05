@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="proglang.Question3Tests" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-03-05T18:52:16" hostname="rowan07.doc.ic.ac.uk" time="0.166">
+  <properties/>
+  <testcase name="lastInSequence stmt1" classname="proglang.Question3Tests" time="0.117"/>
+  <testcase name="lastInSequence stmt2" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="lastInSequence stmt3" classname="proglang.Question3Tests" time="0.002"/>
+  <testcase name="lastInSequence stmt4" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="lastInSequence stmt5" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="next stmt1" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="next stmt2" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="next stmt3" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="next stmt4" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="next stmt5" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="toString stmt1" classname="proglang.Question3Tests" time="0.008"/>
+  <testcase name="toString stmt2" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="toString stmt3" classname="proglang.Question3Tests" time="0.037"/>
+  <testcase name="toString stmt4" classname="proglang.Question3Tests" time="0.0"/>
+  <testcase name="toString stmt5" classname="proglang.Question3Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

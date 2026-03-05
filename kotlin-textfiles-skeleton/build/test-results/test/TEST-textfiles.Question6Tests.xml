@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="textfiles.Question6Tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-02-26T20:03:46" hostname="beech04.doc.ic.ac.uk" time="0.638">
+  <properties/>
+  <testcase name="testGetSetAndSizeViaOperator" classname="textfiles.Question6Tests" time="0.006"/>
+  <testcase name="testIteratorViaOperator" classname="textfiles.Question6Tests" time="0.008"/>
+  <testcase name="testGetSetAndSize" classname="textfiles.Question6Tests" time="0.0"/>
+  <testcase name="performanceTest" classname="textfiles.Question6Tests" time="0.62"/>
+  <testcase name="testIterator" classname="textfiles.Question6Tests" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

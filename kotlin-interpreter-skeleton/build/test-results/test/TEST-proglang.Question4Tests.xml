@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="proglang.Question4Tests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-03-05T18:52:16" hostname="rowan07.doc.ic.ac.uk" time="0.004">
+  <properties/>
+  <testcase name="step stmt4 false condition" classname="proglang.Question4Tests" time="0.002"/>
+  <testcase name="step stmt5 true condition" classname="proglang.Question4Tests" time="0.0"/>
+  <testcase name="step stmt4 true condition" classname="proglang.Question4Tests" time="0.001"/>
+  <testcase name="step stmt5 false condition" classname="proglang.Question4Tests" time="0.0"/>
+  <testcase name="step stmt1" classname="proglang.Question4Tests" time="0.0"/>
+  <testcase name="step stmt2" classname="proglang.Question4Tests" time="0.0"/>
+  <testcase name="step stmt3" classname="proglang.Question4Tests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="social.Question5Tests" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-03-04T22:17:03" hostname="rowan21.doc.ic.ac.uk" time="0.858">
+  <properties/>
+  <testcase name="performance test 2" classname="social.Question5Tests" time="0.46"/>
+  <testcase name="test remove oldest entry 1" classname="social.Question5Tests" time="0.0"/>
+  <testcase name="test remove oldest entry 2" classname="social.Question5Tests" time="0.001"/>
+  <testcase name="test remove oldest entry 3" classname="social.Question5Tests" time="0.0"/>
+  <testcase name="test set size remove" classname="social.Question5Tests" time="0.0"/>
+  <testcase name="test values 1" classname="social.Question5Tests" time="0.0"/>
+  <testcase name="test values 2" classname="social.Question5Tests" time="0.0"/>
+  <testcase name="test example in appendix" classname="social.Question5Tests" time="0.001"/>
+  <testcase name="performance test" classname="social.Question5Tests" time="0.396"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

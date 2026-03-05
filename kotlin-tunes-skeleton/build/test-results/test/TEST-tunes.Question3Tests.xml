@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tunes.Question3Tests" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-02-26T22:08:53" hostname="beech04.doc.ic.ac.uk" time="0.003">
+  <properties/>
+  <testcase name="testAddNotesSomeTooHigh" classname="tunes.Question3Tests" time="0.0"/>
+  <testcase name="testTransposeUpThenDown" classname="tunes.Question3Tests" time="0.0"/>
+  <testcase name="testTransposeUpTooFar" classname="tunes.Question3Tests" time="0.0"/>
+  <testcase name="testTransposeDown" classname="tunes.Question3Tests" time="0.0"/>
+  <testcase name="testAddNotesAllOk1" classname="tunes.Question3Tests" time="0.001"/>
+  <testcase name="testAddNotesAllOk2" classname="tunes.Question3Tests" time="0.0"/>
+  <testcase name="testAddNotesSomeTooLow" classname="tunes.Question3Tests" time="0.0"/>
+  <testcase name="testTransposeDownTooFar" classname="tunes.Question3Tests" time="0.001"/>
+  <testcase name="testTransposeUp" classname="tunes.Question3Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

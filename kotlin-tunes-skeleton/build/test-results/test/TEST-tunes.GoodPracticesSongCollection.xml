@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tunes.GoodPracticesSongCollection" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-26T22:08:52" hostname="beech04.doc.ic.ac.uk" time="0.905">
+  <properties/>
+  <testcase name="testAllNestedClassesPrivateAndFinal" classname="tunes.GoodPracticesSongCollection" time="0.874"/>
+  <testcase name="testClassIsFinal" classname="tunes.GoodPracticesSongCollection" time="0.015"/>
+  <testcase name="testAllHelperMembersPrivate" classname="tunes.GoodPracticesSongCollection" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

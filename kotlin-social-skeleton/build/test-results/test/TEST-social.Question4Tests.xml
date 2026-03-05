@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="social.Question4Tests" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-03-04T22:17:03" hostname="rowan21.doc.ic.ac.uk" time="0.006">
+  <properties/>
+  <testcase name="test limit of five strategy" classname="social.Question4Tests" time="0.005"/>
+  <testcase name="test interested in dogs strategy" classname="social.Question4Tests" time="0.001"/>
+  <testcase name="test standard strategy" classname="social.Question4Tests" time="0.0"/>
+  <testcase name="test unfriendly strategy" classname="social.Question4Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

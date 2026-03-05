@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="proglang.Question5Tests" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-03-05T18:52:16" hostname="rowan07.doc.ic.ac.uk" time="0.003">
+  <properties/>
+  <testcase name="program 3 toString" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 2 toString" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 1 execution good" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 1 toString" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 2 execution bad" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 5 execution bad" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 4 execution good 1" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 4 execution good 2" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 4 execution good 3" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 3 execution good 1" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 3 execution good 2" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 3 execution good 3" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 3 execution bad" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 1 execution bad" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 4 execution bad" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 5 toString" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 4 toString" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 5 execution good 1" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 5 execution good 2" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 5 execution good 3" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 5 execution good 4" classname="proglang.Question5Tests" time="0.0"/>
+  <testcase name="program 2 execution good" classname="proglang.Question5Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

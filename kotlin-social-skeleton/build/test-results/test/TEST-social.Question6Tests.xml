@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="social.Question6Tests" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-03-04T22:17:04" hostname="rowan21.doc.ic.ac.uk" time="0.008">
+  <properties/>
+  <testcase name="test removeLongestStandingFriend" classname="social.Question6Tests" time="0.002"/>
+  <testcase name="test limit of five strategy" classname="social.Question6Tests" time="0.004"/>
+  <testcase name="test currentFriends 1" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test currentFriends 2" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test yearOfBirth no exception 1" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test yearOfBirth no exception 2" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test bio" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test removeFriend" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test yearOfBirth exception 1" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test yearOfBirth exception 2" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test interested in dogs strategy" classname="social.Question6Tests" time="0.001"/>
+  <testcase name="test standard strategy" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test userName" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test unfriendly strategy" classname="social.Question6Tests" time="0.0"/>
+  <testcase name="test yearOfBirth" classname="social.Question6Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="social.Question7Tests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-04T22:17:04" hostname="rowan21.doc.ic.ac.uk" time="0.157">
+  <properties/>
+  <testcase name="test match maker basic" classname="social.Question7Tests" time="0.002"/>
+  <testcase name="test match maker concurrent" classname="social.Question7Tests" time="0.155"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

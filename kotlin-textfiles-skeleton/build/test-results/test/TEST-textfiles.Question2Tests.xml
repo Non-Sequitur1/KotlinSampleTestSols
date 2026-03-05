@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="textfiles.Question2Tests" tests="24" skipped="0" failures="0" errors="0" timestamp="2026-02-26T20:03:46" hostname="beech04.doc.ic.ac.uk" time="0.019">
+  <properties/>
+  <testcase name="testInsertException1" classname="textfiles.Question2Tests" time="0.013"/>
+  <testcase name="testInsertException2" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testInsertException3" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testGetNumBlocksAndRebalance1" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testGetNumBlocksAndRebalance2" classname="textfiles.Question2Tests" time="0.001"/>
+  <testcase name="testGetNumBlocksAndRebalance3" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testGetNumBlocksAndRebalance4" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testLength1" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testLength2" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testLength3" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDeleteException1" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDeleteException2" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDeleteException3" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDeleteException4" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDeleteException5" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDelete1" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDelete2" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDelete3" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDelete4" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDelete5" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testDelete6" classname="textfiles.Question2Tests" time="0.001"/>
+  <testcase name="testInsert1" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testInsert2" classname="textfiles.Question2Tests" time="0.0"/>
+  <testcase name="testInsert3" classname="textfiles.Question2Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

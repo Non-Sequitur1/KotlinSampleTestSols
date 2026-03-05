@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="proglang.Question2Tests" tests="20" skipped="0" failures="0" errors="0" timestamp="2026-03-05T18:52:16" hostname="rowan07.doc.ic.ac.uk" time="0.017">
+  <properties/>
+  <testcase name="and short circuit exception" classname="proglang.Question2Tests" time="0.007"/>
+  <testcase name="greater than" classname="proglang.Question2Tests" time="0.002"/>
+  <testcase name="not toString" classname="proglang.Question2Tests" time="0.002"/>
+  <testcase name="equals" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="equals toString" classname="proglang.Question2Tests" time="0.001"/>
+  <testcase name="and short circuit" classname="proglang.Question2Tests" time="0.002"/>
+  <testcase name="or short circuit toString" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="or" classname="proglang.Question2Tests" time="0.001"/>
+  <testcase name="and" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="not" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="or short circuit" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="paren" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="less than" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="or short circuit exception" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="and short circuit toString" classname="proglang.Question2Tests" time="0.001"/>
+  <testcase name="greater than toString" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="less than toString" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="and toString" classname="proglang.Question2Tests" time="0.001"/>
+  <testcase name="paren toString" classname="proglang.Question2Tests" time="0.0"/>
+  <testcase name="or toString" classname="proglang.Question2Tests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
