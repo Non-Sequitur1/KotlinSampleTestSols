@@ -4,6 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import kotlin.test.fail
 
 private val exampleStrings: Array<String> = arrayOf(
     "cat",
@@ -46,6 +47,86 @@ class SinglyLinkedListTests {
     }
 
     @Test
+    fun `test remove (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..10) {
+            list.add(i - 1, exampleStrings[i - 1])
+        }
+
+        for (i in 1..10) {
+            list.remove(exampleStrings[10 - i])
+            assertEquals(10 - i, list.size)
+        }
+        assertEquals(
+            "[]",
+            list.toString(),
+        )
+    }
+
+
+    @Test
+    fun `test remove on nonexistent element (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..10) {
+            list.add(i - 1, exampleStrings[i - 1])
+        }
+
+        assertTrue(!list.remove("skibidi sigma toilet"))
+    }
+
+    @Test
+    fun `test removeAt (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..10) {
+            list.add(i - 1, exampleStrings[i - 1])
+        }
+
+        for (i in 1..10) {
+            list.removeAt(10 - i)
+            assertEquals(10 - i, list.size)
+        }
+        assertEquals(
+            "[]",
+            list.toString(),
+        )
+    }
+
+
+    @Test
+    fun `test removeAt out of bounds (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..10) {
+            list.add(i - 1, exampleStrings[i - 1])
+        }
+
+        try {
+            list.removeAt(10)
+            fail("Exception was not thrown")
+        }
+        catch (e: IndexOutOfBoundsException) {
+
+        }
+    }
+
+
+    @Test
+    fun `test removeAt negative (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..10) {
+            list.add(i - 1, exampleStrings[i - 1])
+        }
+
+        try {
+            list.removeAt(-1)
+            fail("Exception was not thrown")
+        }
+        catch (e: IndexOutOfBoundsException) {
+
+        }
+    }
+
+
+    @Test
     fun `test add in middle (String)`() {
         val list = SinglyLinkedList<String>()
         for (i in 1..5) {
@@ -59,6 +140,32 @@ class SinglyLinkedListTests {
     }
 
     @Test
+    fun `test remove in middle (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..5) {
+            list.add(i - 1, exampleStrings[i])
+            assertEquals(i, list.size)
+        }
+        list.add(3, "blob")
+        list.remove("blob")
+        assertEquals(5, list.size)
+        assertEquals("[dog, frog, horse, zebra, wildebeest]", list.toString())
+    }
+
+    @Test
+    fun `test removeAt in middle (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..5) {
+            list.add(i - 1, exampleStrings[i])
+            assertEquals(i, list.size)
+        }
+        list.add(3, "blob")
+        list.removeAt(3)
+        assertEquals(5, list.size)
+        assertEquals("[dog, frog, horse, zebra, wildebeest]", list.toString())
+    }
+
+    @Test
     fun `test add at end (String)`() {
         val list = SinglyLinkedList<String>()
         for (i in 1..5) {
@@ -68,6 +175,34 @@ class SinglyLinkedListTests {
         list.add(5, "blob")
         assertEquals(6, list.size)
         assertEquals("[dog, frog, horse, zebra, wildebeest, blob]", list.toString())
+    }
+
+
+    @Test
+    fun `test remove at end (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..5) {
+            list.add(i - 1, exampleStrings[i])
+            assertEquals(i, list.size)
+        }
+        list.add(5, "blob")
+        list.remove("blob")
+        assertEquals(5, list.size)
+        assertEquals("[dog, frog, horse, zebra, wildebeest]", list.toString())
+    }
+
+
+    @Test
+    fun `test removeAt at end (String)`() {
+        val list = SinglyLinkedList<String>()
+        for (i in 1..5) {
+            list.add(i - 1, exampleStrings[i])
+            assertEquals(i, list.size)
+        }
+        list.add(5, "blob")
+        list.removeAt(5)
+        assertEquals(5, list.size)
+        assertEquals("[dog, frog, horse, zebra, wildebeest]", list.toString())
     }
 
     @Test

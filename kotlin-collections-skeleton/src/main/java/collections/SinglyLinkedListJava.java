@@ -7,23 +7,7 @@ import java.util.NoSuchElementException;
 
 public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
 
-    private static class Node<T> {
-        T element;
-        Node<T> next;
-
-        Node(T element, Node<T> next) {
-            this.element = element;
-            this.next = next;
-        }
-
-        Node(T element) {
-            this.element = element;
-            this.next = null;
-        }
-    }
-
     private int size = 0;
-
     private Node<T> head = null;
 
     @Override
@@ -51,42 +35,107 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
 
     @Override
     public T get(int index) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        checkIndexInBounds(index);
+        Node<T> current = this.head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.element;
     }
 
     @Override
     public void add(int index, T element) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        checkIndexInBounds(index, true);
+        size++;
+        ImperialPair<Node<T>, Node<T>> prevCurr = traverseTo(index);
+        Node<T> prev = prevCurr.first();
+        Node<T> curr = prevCurr.second();
+        Node<T> newNode = new Node<T>(element, curr);
+        if (prev == null) {
+            head = newNode;
+        } else {
+            prev.next = newNode;
+        }
     }
 
     @Override
     public void clear() {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        this.head = null;
+        this.size = 0;
     }
 
     @Override
     public boolean contains(T element) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        Node<T> current = head;
+        while (current != null) {
+            if (current.element == element) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
     }
 
     @Override
     public T removeAt(int index) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        checkIndexInBounds(index);
+        ImperialPair<Node<T>, Node<T>> prevCurr = traverseTo(index);
+        Node<T> prev = prevCurr.first();
+        Node<T> curr = prevCurr.second();
+        T result = prev.element;
+        unlink(prev, curr);
+        return result;
     }
 
     @Override
     public boolean remove(T element) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        Node<T> previous = null;
+        Node<T> current = head;
+        while (current != null) {
+            if (current.element == element) {
+                unlink(previous, current);
+                return true;
+            }
+            previous = current;
+            current = current.next;
+        }
+        return false;
     }
 
     @Override
     public T set(int index, T element) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        checkIndexInBounds(index);
+        Node<T> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        T result = current.element;
+        current.element = element;
+        return result;
     }
 
     @Override
     public void addAll(int index, @NotNull ImperialMutableList<T> other) {
-        throw new RuntimeException("TODO: you need to implement this method.");
+        checkIndexInBounds(index, true);
+        Iterator<T> iterator = other.iterator();
+        Node<T> start = new Node<T>(iterator.next());
+        Node<T> end = start;
+        while (iterator.hasNext()) {
+            end.next = new Node<T>(iterator.next());
+            end = end.next;
+        }
+        if (index == 0) {
+            end.next = head;
+            head = start;
+        } else {
+            ImperialPair<Node<T>, Node<T>> prevCurr = traverseTo(index);
+            Node<T> prev = prevCurr.first();
+            Node<T> curr = prevCurr.second();
+            assert (prev != null);
+            prev.next = start;
+            end.next = curr;
+        }
+        size += other.getSize();
     }
 
     @NotNull
@@ -94,16 +143,23 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
     public Iterator<T> iterator() {
         return new Iterator<T>() {
             // TODO: you need to populate this anonymous class, including implementing its methods.
+            private Node<T> nextElement = head;
 
             @Override
             public boolean hasNext() {
-                throw new RuntimeException("TODO: you need to implement this method.");
+                return nextElement != null;
             }
 
             @Override
             public T next() {
-                throw new RuntimeException("TODO: you need to implement this method.");
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                T result = nextElement.element;
+                nextElement = nextElement.next;
+                return result;
             }
+
         };
     }
 
@@ -134,5 +190,20 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
             previous.next = current.next;
         }
         size--;
+    }
+
+    private static class Node<T> {
+        T element;
+        Node<T> next;
+
+        Node(T element, Node<T> next) {
+            this.element = element;
+            this.next = next;
+        }
+
+        Node(T element) {
+            this.element = element;
+            this.next = null;
+        }
     }
 }

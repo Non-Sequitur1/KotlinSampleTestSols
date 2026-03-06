@@ -22,20 +22,22 @@ class Hashmap<K, V>(
     override fun iterator(): Iterator<ImperialMutableMap.Entry<K, V>> = helperMethod().iterator()
 
     override fun put(key: K, value: V): V? {
+        if (size > buckets.size * MAX_LOAD_FACTOR) {
+            resize()
+        }
         val bucket = key.bucket()
-        for (i in 0..<bucket.size) {
-            val entry = bucket[i]
+        for (entry : ImperialMutableMap.Entry<K, V> in bucket) { // iterator-based access
             if (entry.key == key) {
                 val result = entry.value
                 entry.value = value
-                if (size > buckets.size * MAX_LOAD_FACTOR) {
-                    resize()
-                }
+                // The size doesn't even change here!
                 return result
             }
         }
         bucket.add(0, ImperialMutableMap.Entry(key, value))
         size++
+        // Here you did not check for the size AFTER doing the add!
+
         return null
     }
 
@@ -54,19 +56,21 @@ class Hashmap<K, V>(
             if (entry.key == key) {
                 val result = entry.value
                 bucket.removeAt(index)
+                size-- // you need to decrement the size
                 return result
             }
         }
         return null
     }
 
-    fun K.bucketIndex(): Int = Math.floorMod(hashCode(), buckets.size)
+    fun K.bucketIndex(): Int = hashCode() and (buckets.size  - 1) // Math.floorMod(hashCode(), buckets.size)
 
     fun K.bucket(): Bucket<K, V> = buckets[bucketIndex()]
 
     fun resize() {
         val entries = helperMethod()
-        buckets = Array(buckets.size * 2) { bucketFactory() }
+        buckets = Array(buckets.size shl 1) { bucketFactory() }
+        size = 0 // You forgot to reinitialise the size here!
         entries.forEach {
             put(it.key, it.value)
         }

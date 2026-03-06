@@ -18,7 +18,7 @@ private class ExceptionMonitoringThread(
         try {
             body()
         } catch (exception: Exception) {
-            lock.withLock() {
+            lock.withLock {
                 exceptions.add(exception)
             }
         }
@@ -137,7 +137,12 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
             threadBodies = listOf(adderBody, removerBody),
             initialEntries = (chunkSize..<3 * chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) },
             expectedInFinalResult = (0..<chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) }.toSet(),
-            notExpectedInFinalResult = (chunkSize * 2..<3 * chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) }.toSet(),
+            notExpectedInFinalResult = (chunkSize * 2..<3 * chunkSize).map {
+                ImperialMutableMap.Entry(
+                    it,
+                    it.toString()
+                )
+            }.toSet(),
         )
     }
 
@@ -169,7 +174,12 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
             threadBodies = adderBodies + removerBodies,
             initialEntries = (chunkSize..<3 * chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) },
             expectedInFinalResult = (0..<chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) }.toSet(),
-            notExpectedInFinalResult = (chunkSize * 2..<3 * chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) }.toSet(),
+            notExpectedInFinalResult = (chunkSize * 2..<3 * chunkSize).map {
+                ImperialMutableMap.Entry(
+                    it,
+                    it.toString()
+                )
+            }.toSet(),
         )
     }
 

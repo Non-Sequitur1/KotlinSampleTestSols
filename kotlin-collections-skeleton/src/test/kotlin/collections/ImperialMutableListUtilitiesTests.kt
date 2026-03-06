@@ -1,5 +1,4 @@
 package collections
-/*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -43,4 +42,3 @@ class ImperialMutableListUtilitiesTests {
         assertEquals(1, list1[2])
     }
 }
-*/
