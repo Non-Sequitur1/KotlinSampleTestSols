@@ -9,7 +9,6 @@ Imperial College Kotlin Sample Tests Answers / 我的帝国理工 Kotlin 样本�
     - Kotlin Social
     - Kotlin Interpreter
     - Kotlin Text Files
-- I am still working on:
     - Kotlin Collections
 
 
