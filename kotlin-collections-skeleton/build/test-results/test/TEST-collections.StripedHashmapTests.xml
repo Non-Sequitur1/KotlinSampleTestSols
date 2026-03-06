@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="collections.StripedHashmapTests" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-03-06T13:56:15" hostname="rowan23.doc.ic.ac.uk" time="1.903">
+<testsuite name="collections.StripedHashmapTests" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-03-06T13:57:49" hostname="rowan23.doc.ic.ac.uk" time="1.975">
   <properties/>
-  <testcase name="trivial test" classname="collections.StripedHashmapTests" time="0.012"/>
-  <testcase name="eight threads add" classname="collections.StripedHashmapTests" time="0.317"/>
-  <testcase name="no deadlock in concurrent resize" classname="collections.StripedHashmapTests" time="0.247"/>
-  <testcase name="one thread adds, one thread removes" classname="collections.StripedHashmapTests" time="0.11"/>
-  <testcase name="size changes must not be observed during resizing" classname="collections.StripedHashmapTests" time="0.006"/>
-  <testcase name="eight threads add, eight threads remove" classname="collections.StripedHashmapTests" time="0.097"/>
-  <testcase name="performance test 1" classname="collections.StripedHashmapTests" time="0.316"/>
-  <testcase name="performance test 2" classname="collections.StripedHashmapTests" time="0.784"/>
-  <testcase name="test entries initially empty" classname="collections.StripedHashmapTests" time="0.001"/>
+  <testcase name="trivial test" classname="collections.StripedHashmapTests" time="0.013"/>
+  <testcase name="eight threads add" classname="collections.StripedHashmapTests" time="0.32"/>
+  <testcase name="no deadlock in concurrent resize" classname="collections.StripedHashmapTests" time="0.26"/>
+  <testcase name="one thread adds, one thread removes" classname="collections.StripedHashmapTests" time="0.106"/>
+  <testcase name="size changes must not be observed during resizing" classname="collections.StripedHashmapTests" time="0.007"/>
+  <testcase name="eight threads add, eight threads remove" classname="collections.StripedHashmapTests" time="0.171"/>
+  <testcase name="performance test 1" classname="collections.StripedHashmapTests" time="0.319"/>
+  <testcase name="performance test 2" classname="collections.StripedHashmapTests" time="0.767"/>
+  <testcase name="test entries initially empty" classname="collections.StripedHashmapTests" time="0.0"/>
   <testcase name="test entries after some putting, removing and setting" classname="collections.StripedHashmapTests" time="0.002"/>
-  <testcase name="test size after put" classname="collections.StripedHashmapTests" time="0.001"/>
+  <testcase name="test size after put" classname="collections.StripedHashmapTests" time="0.0"/>
   <testcase name="test entries after some setting" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test contains after put" classname="collections.StripedHashmapTests" time="0.0"/>
   <testcase name="test contains when empty" classname="collections.StripedHashmapTests" time="0.0"/>
@@ -25,549 +25,141 @@
   <testcase name="test entries after some putting (collision prone)" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test entries after some putting, removing and setting (collision prone)" classname="collections.StripedHashmapTests" time="0.002"/>
   <system-out><![CDATA[Repeat run 1 of 8
-80000
-80000
-80000
 Repeat run 2 of 8
-80000
-80000
-80000
 Repeat run 3 of 8
-80000
-80000
-80000
 Repeat run 4 of 8
-80000
-80000
-80000
 Repeat run 5 of 8
-80000
-80000
-80000
 Repeat run 6 of 8
-80000
-80000
-80000
 Repeat run 7 of 8
-80000
-80000
-80000
 Repeat run 8 of 8
-80000
-80000
-80000
 Repeat run 1 of 100
-0
-32
-32
 Repeat run 2 of 100
-0
-32
-32
 Repeat run 3 of 100
-0
-32
-32
 Repeat run 4 of 100
-0
-32
-32
 Repeat run 5 of 100
-0
-32
-32
 Repeat run 6 of 100
-0
-32
-32
 Repeat run 7 of 100
-0
-32
-32
 Repeat run 8 of 100
-0
-32
-32
 Repeat run 9 of 100
-0
-32
-32
 Repeat run 10 of 100
-0
-32
-32
 Repeat run 11 of 100
-0
-32
-32
 Repeat run 12 of 100
-0
-32
-32
 Repeat run 13 of 100
-0
-32
-32
 Repeat run 14 of 100
-0
-32
-32
 Repeat run 15 of 100
-0
-32
-32
 Repeat run 16 of 100
-0
-32
-32
 Repeat run 17 of 100
-0
-32
-32
 Repeat run 18 of 100
-0
-32
-32
 Repeat run 19 of 100
-0
-32
-32
 Repeat run 20 of 100
-0
-32
-32
 Repeat run 21 of 100
-0
-32
-32
 Repeat run 22 of 100
-0
-32
-32
 Repeat run 23 of 100
-0
-32
-32
 Repeat run 24 of 100
-0
-32
-32
 Repeat run 25 of 100
-0
-32
-32
 Repeat run 26 of 100
-0
-32
-32
 Repeat run 27 of 100
-0
-32
-32
 Repeat run 28 of 100
-0
-32
-32
 Repeat run 29 of 100
-0
-32
-32
 Repeat run 30 of 100
-0
-32
-32
 Repeat run 31 of 100
-0
-32
-32
 Repeat run 32 of 100
-0
-32
-32
 Repeat run 33 of 100
-0
-32
-32
 Repeat run 34 of 100
-0
-32
-32
 Repeat run 35 of 100
-0
-32
-32
 Repeat run 36 of 100
-0
-32
-32
 Repeat run 37 of 100
-0
-32
-32
 Repeat run 38 of 100
-0
-32
-32
 Repeat run 39 of 100
-0
-32
-32
 Repeat run 40 of 100
-0
-32
-32
 Repeat run 41 of 100
-0
-32
-32
 Repeat run 42 of 100
-0
-32
-32
 Repeat run 43 of 100
-0
-32
-32
 Repeat run 44 of 100
-0
-32
-32
 Repeat run 45 of 100
-0
-32
-32
 Repeat run 46 of 100
-0
-32
-32
 Repeat run 47 of 100
-0
-32
-32
 Repeat run 48 of 100
-0
-32
-32
 Repeat run 49 of 100
-0
-32
-32
 Repeat run 50 of 100
-0
-32
-32
 Repeat run 51 of 100
-0
-32
-32
 Repeat run 52 of 100
-0
-32
-32
 Repeat run 53 of 100
-0
-32
-32
 Repeat run 54 of 100
-0
-32
-32
 Repeat run 55 of 100
-0
-32
-32
 Repeat run 56 of 100
-0
-32
-32
 Repeat run 57 of 100
-0
-32
-32
 Repeat run 58 of 100
-0
-32
-32
 Repeat run 59 of 100
-0
-32
-32
 Repeat run 60 of 100
-0
-32
-32
 Repeat run 61 of 100
-0
-32
-32
 Repeat run 62 of 100
-0
-32
-32
 Repeat run 63 of 100
-0
-32
-32
 Repeat run 64 of 100
-0
-32
-32
 Repeat run 65 of 100
-0
-32
-32
 Repeat run 66 of 100
-0
-32
-32
 Repeat run 67 of 100
-0
-32
-32
 Repeat run 68 of 100
-0
-32
-32
 Repeat run 69 of 100
-0
-32
-32
 Repeat run 70 of 100
-0
-32
-32
 Repeat run 71 of 100
-0
-32
-32
 Repeat run 72 of 100
-0
-32
-32
 Repeat run 73 of 100
-0
-32
-32
 Repeat run 74 of 100
-0
-32
-32
 Repeat run 75 of 100
-0
-32
-32
 Repeat run 76 of 100
-0
-32
-32
 Repeat run 77 of 100
-0
-32
-32
 Repeat run 78 of 100
-0
-32
-32
 Repeat run 79 of 100
-0
-32
-32
 Repeat run 80 of 100
-0
-32
-32
 Repeat run 81 of 100
-0
-32
-32
 Repeat run 82 of 100
-0
-32
-32
 Repeat run 83 of 100
-0
-32
-32
 Repeat run 84 of 100
-0
-32
-32
 Repeat run 85 of 100
-0
-32
-32
 Repeat run 86 of 100
-0
-32
-32
 Repeat run 87 of 100
-0
-32
-32
 Repeat run 88 of 100
-0
-32
-32
 Repeat run 89 of 100
-0
-32
-32
 Repeat run 90 of 100
-0
-32
-32
 Repeat run 91 of 100
-0
-32
-32
 Repeat run 92 of 100
-0
-32
-32
 Repeat run 93 of 100
-0
-32
-32
 Repeat run 94 of 100
-0
-32
-32
 Repeat run 95 of 100
-0
-32
-32
 Repeat run 96 of 100
-0
-32
-32
 Repeat run 97 of 100
-0
-32
-32
 Repeat run 98 of 100
-0
-32
-32
 Repeat run 99 of 100
-0
-32
-32
 Repeat run 100 of 100
-0
-32
-32
 Repeat run 1 of 10
-4096
-4980
-4980
 Repeat run 2 of 10
-4096
-5034
-5034
 Repeat run 3 of 10
-4096
-5539
-5539
 Repeat run 4 of 10
-4096
-5841
-5841
 Repeat run 5 of 10
-4096
-4947
-4947
 Repeat run 6 of 10
-4096
-4874
-4874
 Repeat run 7 of 10
-4096
-4853
-4853
 Repeat run 8 of 10
-4096
-5100
-5100
 Repeat run 9 of 10
-4096
-4883
-4883
 Repeat run 10 of 10
-4096
-4893
-4893
 Repeat run 1 of 10
-1001
-1001
-1001
 Repeat run 2 of 10
-1001
-1001
-1001
 Repeat run 3 of 10
-1001
-1001
-1001
 Repeat run 4 of 10
-1001
-1001
-1001
 Repeat run 5 of 10
-1001
-1001
-1001
 Repeat run 6 of 10
-1001
-1001
-1001
 Repeat run 7 of 10
-1001
-1001
-1001
 Repeat run 8 of 10
-1001
-1001
-1001
 Repeat run 9 of 10
-1001
-1001
-1001
 Repeat run 10 of 10
-1001
-1001
-1001
 Repeat run 1 of 8
-4096
-8141
-8141
 Repeat run 2 of 8
-4096
-4751
-4751
 Repeat run 3 of 8
-4096
-4104
-4104
 Repeat run 4 of 8
-4096
-4104
-4104
 Repeat run 5 of 8
-4096
-4102
-4102
 Repeat run 6 of 8
-4096
-4108
-4108
 Repeat run 7 of 8
-4096
-4106
-4106
 Repeat run 8 of 8
-4096
-4110
-4110
 Performance test started.
 Added 0 elements out of 1000000. These messages should fly by if performance is adequate.
 Added 10000 elements out of 1000000. These messages should fly by if performance is adequate.

@@ -102,9 +102,6 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
             }
             val finalContentsAsList = theMap.toList()
             val finalContentsAsSet = finalContentsAsList.toSet()
-            println(expectedInFinalResult.size)
-            println(finalContentsAsList.size)
-            println(finalContentsAsSet.size)
             // There should be no difference in the size of final contents as a list vs. as a set
             assertEquals(finalContentsAsList.size, finalContentsAsSet.size)
             assertTrue(finalContentsAsSet.containsAll(expectedInFinalResult))
