@@ -9,7 +9,6 @@ import kotlin.test.fail
 // import kotlin.test.assertTrue
 
 class SinglyLinkedListExtraTests {
-
     // TODO - replace this placeholder test with a number of your own tests.
     @Test
     fun `placeholder test`() {

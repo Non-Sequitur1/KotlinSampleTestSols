@@ -1,7 +1,8 @@
 package collections
 
-class ResizingArrayList<T>(private val initialCapacity: Int = 16) : ImperialMutableList<T> {
-
+class ResizingArrayList<T>(
+    private val initialCapacity: Int = 16,
+) : ImperialMutableList<T> {
     private var array: Array<T?> = arrayOfNulls<Any?>(initialCapacity) as Array<T?>
 
     override var size: Int = 0
@@ -19,7 +20,10 @@ class ResizingArrayList<T>(private val initialCapacity: Int = 16) : ImperialMuta
         return array[index]!!
     }
 
-    override fun add(index: Int, element: T) {
+    override fun add(
+        index: Int,
+        element: T,
+    ) {
         if (!(index >= 0 && index <= size)) throw IndexOutOfBoundsException()
         resize()
         for (i in (index until size).reversed()) {
@@ -54,32 +58,38 @@ class ResizingArrayList<T>(private val initialCapacity: Int = 16) : ImperialMuta
         return true
     }
 
-    override operator fun set(index: Int, element: T): T {
+    override operator fun set(
+        index: Int,
+        element: T,
+    ): T {
         if (!(index >= 0 && index < size)) throw IndexOutOfBoundsException()
         val oldValue: T = array[index]!!
         array[index] = element
         return oldValue
     }
 
-    override fun addAll(index: Int, other: ImperialMutableList<T>) {
+    override fun addAll(
+        index: Int,
+        other: ImperialMutableList<T>,
+    ) {
         for (item: T in other.reversed()) {
             add(index, item)
         }
     }
 
-    override fun iterator(): Iterator<T> = object : Iterator<T> {
+    override fun iterator(): Iterator<T> =
+        object : Iterator<T> {
+            private var index: Int = 0
 
-        private var index: Int = 0
+            override fun hasNext(): Boolean = index < size
 
-        override fun hasNext(): Boolean = index < size
-
-        override fun next(): T = if (hasNext()) {
-            array[index++]!!
-        } else {
-            throw NoSuchElementException()
+            override fun next(): T =
+                if (hasNext()) {
+                    array[index++]!!
+                } else {
+                    throw NoSuchElementException()
+                }
         }
-
-    }
 
     override fun toString(): String {
         val result = StringBuilder()
@@ -100,5 +110,4 @@ class ResizingArrayList<T>(private val initialCapacity: Int = 16) : ImperialMuta
     init {
         require(initialCapacity >= 0) { "Array initial capacity cannot be negative." }
     }
-
 }

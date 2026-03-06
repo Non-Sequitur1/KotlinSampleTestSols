@@ -1,10 +1,9 @@
 package collections
-/*
+
 import kotlin.test.Test
 import kotlin.test.assertFalse
 
 class StripedHashmapTests : ThreadSafeImperialMutableMapTestsParent() {
-
     override fun emptyThreadSafeMapIntString(): ImperialMutableMap<Int, String> = StripedHashmap(::SinglyLinkedList)
 
     override fun emptyCustomMutableMapStringInt(): ImperialMutableMap<String, Int> = StripedHashmap(::SinglyLinkedList)
@@ -18,4 +17,3 @@ class StripedHashmapTests : ThreadSafeImperialMutableMapTestsParent() {
         assertFalse(emptyCustomMutableMapStringInt().iterator().hasNext())
     }
 }
-*/

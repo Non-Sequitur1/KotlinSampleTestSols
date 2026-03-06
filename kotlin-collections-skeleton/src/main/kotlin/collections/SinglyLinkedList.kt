@@ -1,8 +1,10 @@
 package collections
 
 class SinglyLinkedList<T> : ImperialMutableList<T> {
-
-    private class Node<T>(var element: T, var next: Node<T>? = null)
+    private class Node<T>(
+        var element: T,
+        var next: Node<T>? = null,
+    )
 
     private var head: Node<T>? = null
 
@@ -35,7 +37,10 @@ class SinglyLinkedList<T> : ImperialMutableList<T> {
         return current!!.element
     }
 
-    override fun add(index: Int, element: T) {
+    override fun add(
+        index: Int,
+        element: T,
+    ) {
         checkIndexInBounds(index, true)
         size++
         val (previous: Node<T>?, current: Node<T>?) = traverseTo(index)
@@ -85,7 +90,10 @@ class SinglyLinkedList<T> : ImperialMutableList<T> {
         return false
     }
 
-    override fun set(index: Int, element: T): T {
+    override fun set(
+        index: Int,
+        element: T,
+    ): T {
         checkIndexInBounds(index)
         var current: Node<T>? = head
         for (i in 0..<index) {
@@ -96,7 +104,10 @@ class SinglyLinkedList<T> : ImperialMutableList<T> {
         return result
     }
 
-    override fun addAll(index: Int, other: ImperialMutableList<T>) {
+    override fun addAll(
+        index: Int,
+        other: ImperialMutableList<T>,
+    ) {
         checkIndexInBounds(index, true)
         val iterator = other.iterator()
         val start = Node(iterator.next())
@@ -117,20 +128,21 @@ class SinglyLinkedList<T> : ImperialMutableList<T> {
         size += other.size
     }
 
-    override fun iterator(): Iterator<T> = object : Iterator<T> {
-        private var nextElement: Node<T>? = head
+    override fun iterator(): Iterator<T> =
+        object : Iterator<T> {
+            private var nextElement: Node<T>? = head
 
-        override fun hasNext(): Boolean = nextElement != null
+            override fun hasNext(): Boolean = nextElement != null
 
-        override fun next(): T {
-            if (!hasNext()) {
-                throw NoSuchElementException()
+            override fun next(): T {
+                if (!hasNext()) {
+                    throw NoSuchElementException()
+                }
+                val result = nextElement!!.element
+                nextElement = nextElement!!.next
+                return result
             }
-            val result = nextElement!!.element
-            nextElement = nextElement!!.next
-            return result
         }
-    }
 
     private fun checkIndexInBounds(
         index: Int,
@@ -142,7 +154,10 @@ class SinglyLinkedList<T> : ImperialMutableList<T> {
             Unit
         }
 
-    private fun unlink(previous: Node<T>?, current: Node<T>) {
+    private fun unlink(
+        previous: Node<T>?,
+        current: Node<T>,
+    ) {
         if (previous == null) {
             head = current.next
         } else {

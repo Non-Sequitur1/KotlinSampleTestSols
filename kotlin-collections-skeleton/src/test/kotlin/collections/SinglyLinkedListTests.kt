@@ -6,21 +6,21 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 import kotlin.test.fail
 
-private val exampleStrings: Array<String> = arrayOf(
-    "cat",
-    "dog",
-    "frog",
-    "horse",
-    "zebra",
-    "wildebeest",
-    "vulture",
-    "hyena",
-    "warthog",
-    "hyrax",
-)
+private val exampleStrings: Array<String> =
+    arrayOf(
+        "cat",
+        "dog",
+        "frog",
+        "horse",
+        "zebra",
+        "wildebeest",
+        "vulture",
+        "hyena",
+        "warthog",
+        "hyrax",
+    )
 
 class SinglyLinkedListTests {
-
     @Test
     fun `test get (String)`() {
         val list = SinglyLinkedList<String>()
@@ -63,7 +63,6 @@ class SinglyLinkedListTests {
         )
     }
 
-
     @Test
     fun `test remove on nonexistent element (String)`() {
         val list = SinglyLinkedList<String>()
@@ -91,7 +90,6 @@ class SinglyLinkedListTests {
         )
     }
 
-
     @Test
     fun `test removeAt out of bounds (String)`() {
         val list = SinglyLinkedList<String>()
@@ -102,12 +100,9 @@ class SinglyLinkedListTests {
         try {
             list.removeAt(10)
             fail("Exception was not thrown")
-        }
-        catch (e: IndexOutOfBoundsException) {
-
+        } catch (e: IndexOutOfBoundsException) {
         }
     }
-
 
     @Test
     fun `test removeAt negative (String)`() {
@@ -119,12 +114,9 @@ class SinglyLinkedListTests {
         try {
             list.removeAt(-1)
             fail("Exception was not thrown")
-        }
-        catch (e: IndexOutOfBoundsException) {
-
+        } catch (e: IndexOutOfBoundsException) {
         }
     }
-
 
     @Test
     fun `test add in middle (String)`() {
@@ -177,7 +169,6 @@ class SinglyLinkedListTests {
         assertEquals("[dog, frog, horse, zebra, wildebeest, blob]", list.toString())
     }
 
-
     @Test
     fun `test remove at end (String)`() {
         val list = SinglyLinkedList<String>()
@@ -190,7 +181,6 @@ class SinglyLinkedListTests {
         assertEquals(5, list.size)
         assertEquals("[dog, frog, horse, zebra, wildebeest]", list.toString())
     }
-
 
     @Test
     fun `test removeAt at end (String)`() {

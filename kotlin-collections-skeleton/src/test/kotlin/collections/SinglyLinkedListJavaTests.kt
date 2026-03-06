@@ -5,21 +5,21 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-private val exampleStrings: Array<String> = arrayOf(
-    "cat",
-    "dog",
-    "frog",
-    "horse",
-    "zebra",
-    "wildebeest",
-    "vulture",
-    "hyena",
-    "warthog",
-    "hyrax",
-)
+private val exampleStrings: Array<String> =
+    arrayOf(
+        "cat",
+        "dog",
+        "frog",
+        "horse",
+        "zebra",
+        "wildebeest",
+        "vulture",
+        "hyena",
+        "warthog",
+        "hyrax",
+    )
 
 class SinglyLinkedListJavaTests {
-
     @Test
     fun `test get (String)`() {
         val list = SinglyLinkedListJava<String>()

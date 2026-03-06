@@ -3,7 +3,6 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class ImperialMutableListUtilitiesTests {
-
     @Test
     fun `removeAll matching list types`() {
         val list1: ImperialMutableList<String> = SinglyLinkedList()

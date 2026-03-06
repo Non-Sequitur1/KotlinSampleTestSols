@@ -82,14 +82,15 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
             }
             val exceptions = mutableListOf<Exception>()
             val lock = ReentrantLock()
-            val threads = threadBodies.map {
-                Thread(
-                    ExceptionMonitoringThread(
-                        exceptions,
-                        lock,
-                    ) { it(theMap) },
-                )
-            }
+            val threads =
+                threadBodies.map {
+                    Thread(
+                        ExceptionMonitoringThread(
+                            exceptions,
+                            lock,
+                        ) { it(theMap) },
+                    )
+                }
             threads.forEach(Thread::start)
             threads.forEach(Thread::join)
             if (exceptions.isNotEmpty()) {
@@ -101,6 +102,9 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
             }
             val finalContentsAsList = theMap.toList()
             val finalContentsAsSet = finalContentsAsList.toSet()
+            println(expectedInFinalResult.size)
+            println(finalContentsAsList.size)
+            println(finalContentsAsSet.size)
             // There should be no difference in the size of final contents as a list vs. as a set
             assertEquals(finalContentsAsList.size, finalContentsAsSet.size)
             assertTrue(finalContentsAsSet.containsAll(expectedInFinalResult))
@@ -137,49 +141,55 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
             threadBodies = listOf(adderBody, removerBody),
             initialEntries = (chunkSize..<3 * chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) },
             expectedInFinalResult = (0..<chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) }.toSet(),
-            notExpectedInFinalResult = (chunkSize * 2..<3 * chunkSize).map {
-                ImperialMutableMap.Entry(
-                    it,
-                    it.toString()
-                )
-            }.toSet(),
+            notExpectedInFinalResult =
+                (chunkSize * 2..<3 * chunkSize)
+                    .map {
+                        ImperialMutableMap.Entry(
+                            it,
+                            it.toString(),
+                        )
+                    }.toSet(),
         )
     }
 
     @Test
     fun `eight threads add, eight threads remove`() {
         val chunkSize = 1 shl 12
-        val adderBodies: List<(ImperialMutableMap<Int, String>) -> Unit> = (0..<8).map { seed ->
-            { theMap ->
-                addElementsInRandomOrder(
-                    map = theMap,
-                    lowerBound = 0,
-                    numElements = 2 * chunkSize,
-                    seed = seed,
-                )
+        val adderBodies: List<(ImperialMutableMap<Int, String>) -> Unit> =
+            (0..<8).map { seed ->
+                { theMap ->
+                    addElementsInRandomOrder(
+                        map = theMap,
+                        lowerBound = 0,
+                        numElements = 2 * chunkSize,
+                        seed = seed,
+                    )
+                }
             }
-        }
-        val removerBodies: List<(ImperialMutableMap<Int, String>) -> Unit> = (8..<16).map { seed ->
-            { theMap ->
-                removeElementsInRandomOrder(
-                    map = theMap,
-                    lowerBound = chunkSize,
-                    numElements = 3 * chunkSize,
-                    seed = seed,
-                )
+        val removerBodies: List<(ImperialMutableMap<Int, String>) -> Unit> =
+            (8..<16).map { seed ->
+                { theMap ->
+                    removeElementsInRandomOrder(
+                        map = theMap,
+                        lowerBound = chunkSize,
+                        numElements = 3 * chunkSize,
+                        seed = seed,
+                    )
+                }
             }
-        }
         runConcurrencyTest(
             repeatRuns = 8,
             threadBodies = adderBodies + removerBodies,
             initialEntries = (chunkSize..<3 * chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) },
             expectedInFinalResult = (0..<chunkSize).map { ImperialMutableMap.Entry(it, it.toString()) }.toSet(),
-            notExpectedInFinalResult = (chunkSize * 2..<3 * chunkSize).map {
-                ImperialMutableMap.Entry(
-                    it,
-                    it.toString()
-                )
-            }.toSet(),
+            notExpectedInFinalResult =
+                (chunkSize * 2..<3 * chunkSize)
+                    .map {
+                        ImperialMutableMap.Entry(
+                            it,
+                            it.toString(),
+                        )
+                    }.toSet(),
         )
     }
 
@@ -201,26 +211,30 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
         runConcurrencyTest(
             repeatRuns = 10,
             threadBodies = listOf(worker, monitor),
-            initialEntries = (0..<10).map {
-                ImperialMutableMap.Entry(it, it.toString())
-            },
-            expectedInFinalResult = (0..1000).map {
-                ImperialMutableMap.Entry(it, it.toString())
-            }.toSet(),
+            initialEntries =
+                (0..<10).map {
+                    ImperialMutableMap.Entry(it, it.toString())
+                },
+            expectedInFinalResult =
+                (0..1000)
+                    .map {
+                        ImperialMutableMap.Entry(it, it.toString())
+                    }.toSet(),
             notExpectedInFinalResult = setOf(ImperialMutableMap.Entry(-1, "-1")),
         )
     }
 
     @Test
     fun `eight threads add`() {
-        val adderBodies: List<(ImperialMutableMap<Int, String>) -> Unit> = (0..<8).map { threadId ->
-            { theMap ->
-                for (i in 0..<10000) {
-                    val number = threadId * 10000 + i
-                    theMap.put(number, number.toString())
+        val adderBodies: List<(ImperialMutableMap<Int, String>) -> Unit> =
+            (0..<8).map { threadId ->
+                { theMap ->
+                    for (i in 0..<10000) {
+                        val number = threadId * 10000 + i
+                        theMap.put(number, number.toString())
+                    }
                 }
             }
-        }
         runConcurrencyTest(
             repeatRuns = 8,
             threadBodies = adderBodies,
@@ -235,11 +249,12 @@ abstract class ThreadSafeImperialMutableMapTestsParent : ImperialMutableMapTests
     fun `no deadlock in concurrent resize`() {
         runConcurrencyTest(
             repeatRuns = 100,
-            threadBodies = (0..<32).map {
-                { theMap ->
-                    theMap.put(it, it.toString())
-                }
-            },
+            threadBodies =
+                (0..<32).map {
+                    { theMap ->
+                        theMap.put(it, it.toString())
+                    }
+                },
             initialEntries = emptyList(),
             expectedInFinalResult = emptySet(),
             notExpectedInFinalResult = emptySet(),

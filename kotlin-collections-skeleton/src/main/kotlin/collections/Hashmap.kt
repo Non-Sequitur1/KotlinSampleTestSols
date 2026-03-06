@@ -3,7 +3,6 @@ package collections
 class Hashmap<K, V>(
     private val bucketFactory: () -> Bucket<K, V>,
 ) : ImperialMutableMap<K, V> {
-
     // Problem:  TODO - briefly describe the problem you have identified.
     // Solution: TODO - briefly explain how you have solved this problem.
     //
@@ -21,12 +20,15 @@ class Hashmap<K, V>(
     // This simpler approach is intentional here; it is not one of the problems you are supposed to identify.
     override fun iterator(): Iterator<ImperialMutableMap.Entry<K, V>> = helperMethod().iterator()
 
-    override fun put(key: K, value: V): V? {
+    override fun put(
+        key: K,
+        value: V,
+    ): V? {
         if (size > buckets.size * MAX_LOAD_FACTOR) {
             resize()
         }
         val bucket = key.bucket()
-        for (entry : ImperialMutableMap.Entry<K, V> in bucket) { // iterator-based access
+        for (entry: ImperialMutableMap.Entry<K, V> in bucket) { // iterator-based access
             if (entry.key == key) {
                 val result = entry.value
                 entry.value = value
@@ -63,7 +65,7 @@ class Hashmap<K, V>(
         return null
     }
 
-    fun K.bucketIndex(): Int = hashCode() and (buckets.size  - 1) // Math.floorMod(hashCode(), buckets.size)
+    fun K.bucketIndex(): Int = hashCode() and (buckets.size - 1) // Math.floorMod(hashCode(), buckets.size)
 
     fun K.bucket(): Bucket<K, V> = buckets[bucketIndex()]
 

@@ -76,9 +76,10 @@ abstract class ImperialMutableMapTestsParent {
     @Test
     fun `test entries after some putting`() {
         val map = emptyCustomMutableMapStringInt()
-        val entries = (1..100).map {
-            ImperialMutableMap.Entry(it.toString(), it)
-        }
+        val entries =
+            (1..100).map {
+                ImperialMutableMap.Entry(it.toString(), it)
+            }
         entries.forEach {
             map.put(it.key, it.value)
         }
@@ -89,9 +90,10 @@ abstract class ImperialMutableMapTestsParent {
     @Test
     fun `test entries after some setting`() {
         val map = emptyCustomMutableMapStringInt()
-        val expected: List<ImperialMutableMap.Entry<String, Int>> = (1..100).map {
-            ImperialMutableMap.Entry(it.toString(), it)
-        }
+        val expected: List<ImperialMutableMap.Entry<String, Int>> =
+            (1..100).map {
+                ImperialMutableMap.Entry(it.toString(), it)
+            }
         expected.forEach {
             map[it.key] = it.value
         }
@@ -110,9 +112,10 @@ abstract class ImperialMutableMapTestsParent {
     @Test
     fun `test entries after some putting (collision prone)`() {
         val map = emptyCustomMutableMapCollidingStringInt()
-        val expected = (1..100).map {
-            ImperialMutableMap.Entry(CollidingString(it.toString()), it)
-        }
+        val expected =
+            (1..100).map {
+                ImperialMutableMap.Entry(CollidingString(it.toString()), it)
+            }
         expected.forEach {
             map.put(it.key, it.value)
         }
@@ -123,9 +126,10 @@ abstract class ImperialMutableMapTestsParent {
     @Test
     fun `test entries after some setting (collision prone)`() {
         val map = emptyCustomMutableMapCollidingStringInt()
-        val expected = (1..100).map {
-            ImperialMutableMap.Entry(CollidingString(it.toString()), it)
-        }
+        val expected =
+            (1..100).map {
+                ImperialMutableMap.Entry(CollidingString(it.toString()), it)
+            }
         expected.forEach {
             map[it.key] = it.value
         }
@@ -167,8 +171,11 @@ abstract class ImperialMutableMapTestsParent {
         assertEquals(20000, map.size)
     }
 
-    class CollidingString(val string: String) : Comparable<CollidingString> {
+    class CollidingString(
+        val string: String,
+    ) : Comparable<CollidingString> {
         override fun hashCode(): Int = 5
+
         override fun compareTo(other: CollidingString): Int = string.compareTo(other.string)
 
         override fun equals(other: Any?): Boolean {
@@ -206,11 +213,13 @@ abstract class ImperialMutableMapTestsParent {
     }
 
     private fun createExpectedEntriesFromPuttingRemovingAndSetting(): List<ImperialMutableMap.Entry<String, Int>> {
-        val entries = (1..100).map {
-            ImperialMutableMap.Entry(it.toString(), it)
-        }.filter {
-            it.value % 2 != 0 || it.value % 4 == 0
-        }
+        val entries =
+            (1..100)
+                .map {
+                    ImperialMutableMap.Entry(it.toString(), it)
+                }.filter {
+                    it.value % 2 != 0 || it.value % 4 == 0
+                }
         return entries
     }
 
@@ -241,11 +250,13 @@ abstract class ImperialMutableMapTestsParent {
     }
 
     private fun createCollisionProneExpectedEntriesFromPuttingRemovingAndSetting(): List<ImperialMutableMap.Entry<CollidingString, Int>> {
-        val entries = (1..100).map {
-            ImperialMutableMap.Entry(CollidingString(it.toString()), it)
-        }.filter {
-            it.value % 2 != 0 || it.value % 4 == 0
-        }
+        val entries =
+            (1..100)
+                .map {
+                    ImperialMutableMap.Entry(CollidingString(it.toString()), it)
+                }.filter {
+                    it.value % 2 != 0 || it.value % 4 == 0
+                }
         return entries
     }
 }
