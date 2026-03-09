@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="collections.ImperialMutableListUtilitiesTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-09T22:54:30" hostname="beech20.doc.ic.ac.uk" time="0.003">
+  <properties/>
+  <testcase name="removeAll matching list types" classname="collections.ImperialMutableListUtilitiesTests" time="0.002"/>
+  <testcase name="removeAll different list types" classname="collections.ImperialMutableListUtilitiesTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

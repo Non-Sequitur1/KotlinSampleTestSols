@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="collections.SinglyLinkedListJavaTests" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-03-09T22:54:30" hostname="beech20.doc.ic.ac.uk" time="0.01">
+  <properties/>
+  <testcase name="test addAll at start" classname="collections.SinglyLinkedListJavaTests" time="0.006"/>
+  <testcase name="test add (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test addAll small" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="concatenate with iterator" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test set (String)" classname="collections.SinglyLinkedListJavaTests" time="0.001"/>
+  <testcase name="test set (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test get (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test toString empty (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test add in middle (String)" classname="collections.SinglyLinkedListJavaTests" time="0.001"/>
+  <testcase name="size is 0" classname="collections.SinglyLinkedListJavaTests" time="0.001"/>
+  <testcase name="test addAll at index small" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="iterator has next when empty" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test add at end (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="iterate over elements" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test add (String)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test add in middle (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test get (String)" classname="collections.SinglyLinkedListJavaTests" time="0.001"/>
+  <testcase name="test add at end (String)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test clear (String)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test addAll at end" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test clear (Int)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <testcase name="test toString empty (String)" classname="collections.SinglyLinkedListJavaTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,5 +1,4 @@
 package collections
-
 import kotlin.test.Test
 import kotlin.test.assertFalse
 

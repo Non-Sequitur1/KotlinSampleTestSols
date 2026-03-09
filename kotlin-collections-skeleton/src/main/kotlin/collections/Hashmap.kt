@@ -3,17 +3,12 @@ package collections
 class Hashmap<K, V>(
     private val bucketFactory: () -> Bucket<K, V>,
 ) : ImperialMutableMap<K, V> {
-    // Problem:  TODO - briefly describe the problem you have identified.
-    // Solution: TODO - briefly explain how you have solved this problem.
-    //
-    // Problem:  TODO - briefly describe the problem you have identified.
-    // Solution: TODO - briefly explain how you have solved this problem.
-    //
-    // TODO - add further Problem/Solution entries for other problems that you identify.
-
-    var buckets: Array<Bucket<K, V>> = Array(16) { bucketFactory() }
+    private var buckets: Array<Bucket<K, V>> = Array(16) { bucketFactory() }
+    // Users should not be allowed to view the bucket set.
 
     override var size: Int = 0
+        private set
+    // Users should not be allowed to modify the size on demand.
 
     // The iterator implementation works by putting all entries of the map into a list, and then returns an iterator to
     // this list. This is simpler than the "on demand" iterator that you implemented during a lab exercise on hashmaps.
@@ -24,22 +19,29 @@ class Hashmap<K, V>(
         key: K,
         value: V,
     ): V? {
+        // Problem:
+        // Size checking was not properly performed.
+        // Solution:
+        // I had moved the block of code that checks for resizing to the start of the function.
         if (size > buckets.size * MAX_LOAD_FACTOR) {
             resize()
         }
         val bucket = key.bucket()
-        for (entry: ImperialMutableMap.Entry<K, V> in bucket) { // iterator-based access
+
+        // Problem:
+        // Here, index-based iteration is used; this is highly inefficient for linked list based ImperialMutableList implementations.
+        // Solution:
+        // This has been modified to use iterators.
+
+        for (entry: ImperialMutableMap.Entry<K, V> in bucket) {
             if (entry.key == key) {
                 val result = entry.value
                 entry.value = value
-                // The size doesn't even change here!
                 return result
             }
         }
         bucket.add(0, ImperialMutableMap.Entry(key, value))
         size++
-        // Here you did not check for the size AFTER doing the add!
-
         return null
     }
 
@@ -58,27 +60,40 @@ class Hashmap<K, V>(
             if (entry.key == key) {
                 val result = entry.value
                 bucket.removeAt(index)
-                size-- // you need to decrement the size
+                // Problem:
+                // `size` was not being properly decremented.
+                // Solution:
+                // `size--` has been added.
+
+                size--
                 return result
             }
         }
         return null
     }
 
-    fun K.bucketIndex(): Int = hashCode() and (buckets.size - 1) // Math.floorMod(hashCode(), buckets.size)
+    // Users should not be able to call these functions on demand.
 
-    fun K.bucket(): Bucket<K, V> = buckets[bucketIndex()]
+    private fun K.bucketIndex(): Int = Math.floorMod(hashCode(), buckets.size)
 
-    fun resize() {
+    private fun K.bucket(): Bucket<K, V> = buckets[bucketIndex()]
+
+    // Users should not be able to call this function on demand.
+    private fun resize() {
         val entries = helperMethod()
         buckets = Array(buckets.size shl 1) { bucketFactory() }
-        size = 0 // You forgot to reinitialise the size here!
+        // Problem:
+        // `size` was not properly reinitialised upon resize.
+        // Solution:
+        // `size = 0` to reinitialise size.
+
+        size = 0
         entries.forEach {
             put(it.key, it.value)
         }
     }
 
-    fun helperMethod(): SinglyLinkedList<ImperialMutableMap.Entry<K, V>> {
+    private fun helperMethod(): SinglyLinkedList<ImperialMutableMap.Entry<K, V>> {
         val entries = SinglyLinkedList<ImperialMutableMap.Entry<K, V>>()
         for (bucket in buckets) {
             for (entry in bucket) {

@@ -36,7 +36,7 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
     @Override
     public T get(int index) {
         checkIndexInBounds(index);
-        Node<T> current = this.head;
+        Node<T> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
@@ -47,26 +47,26 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
     public void add(int index, T element) {
         checkIndexInBounds(index, true);
         size++;
-        ImperialPair<Node<T>, Node<T>> prevCurr = traverseTo(index);
-        Node<T> prev = prevCurr.first();
-        Node<T> curr = prevCurr.second();
-        Node<T> newNode = new Node<T>(element, curr);
-        if (prev == null) {
+        ImperialPair<Node<T>, Node<T>> previousCurrent = traverseTo(index);
+        Node<T> previous = previousCurrent.getFirst();
+        Node<T> current = previousCurrent.getSecond();
+        Node<T> newNode = new Node<T>(element, current);
+        if (previous == null) {
             head = newNode;
         } else {
-            prev.next = newNode;
+            previous.next = newNode;
         }
     }
 
     @Override
     public void clear() {
-        this.head = null;
-        this.size = 0;
+        head = null;
+        size = 0;
     }
 
     @Override
     public boolean contains(T element) {
-        Node<T> current = head;
+        var current = head;
         while (current != null) {
             if (current.element == element) {
                 return true;
@@ -79,11 +79,11 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
     @Override
     public T removeAt(int index) {
         checkIndexInBounds(index);
-        ImperialPair<Node<T>, Node<T>> prevCurr = traverseTo(index);
-        Node<T> prev = prevCurr.first();
-        Node<T> curr = prevCurr.second();
-        T result = prev.element;
-        unlink(prev, curr);
+        ImperialPair<Node<T>, Node<T>> previousCurrent = traverseTo(index);
+        Node<T> previous = previousCurrent.getFirst();
+        Node<T> current = previousCurrent.getSecond();
+        T result = current.element;
+        unlink(previous, current);
         return result;
     }
 
@@ -128,12 +128,12 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
             end.next = head;
             head = start;
         } else {
-            ImperialPair<Node<T>, Node<T>> prevCurr = traverseTo(index);
-            Node<T> prev = prevCurr.first();
-            Node<T> curr = prevCurr.second();
-            assert (prev != null);
-            prev.next = start;
-            end.next = curr;
+            ImperialPair<Node<T>, Node<T>> previousCurrent = traverseTo(index);
+            Node<T> previous = previousCurrent.getFirst();
+            Node<T> current = previousCurrent.getSecond();
+            assert (previous != null);
+            previous.next = start;
+            end.next = current;
         }
         size += other.getSize();
     }
@@ -142,7 +142,6 @@ public final class SinglyLinkedListJava<T> implements ImperialMutableList<T> {
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            // TODO: you need to populate this anonymous class, including implementing its methods.
             private Node<T> nextElement = head;
 
             @Override

@@ -1,7 +1,5 @@
 package collections
 
-fun <T> ImperialMutableList<T>.removeAll(targList: ImperialMutableList<out T>) {
-    for (toRemove: T in targList) {
-        this.remove(toRemove)
-    }
+fun <T> ImperialMutableList<T>.removeAll(other: ImperialMutableList<out T>) {
+    for (elToRemove: T in other) this.remove(elToRemove)
 }

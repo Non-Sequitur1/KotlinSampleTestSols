@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="collections.StripedHashmapTests" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-03-06T13:57:49" hostname="rowan23.doc.ic.ac.uk" time="1.975">
+<testsuite name="collections.StripedHashmapTests" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-03-09T22:54:24" hostname="beech20.doc.ic.ac.uk" time="3.794">
   <properties/>
-  <testcase name="trivial test" classname="collections.StripedHashmapTests" time="0.013"/>
-  <testcase name="eight threads add" classname="collections.StripedHashmapTests" time="0.32"/>
-  <testcase name="no deadlock in concurrent resize" classname="collections.StripedHashmapTests" time="0.26"/>
-  <testcase name="one thread adds, one thread removes" classname="collections.StripedHashmapTests" time="0.106"/>
-  <testcase name="size changes must not be observed during resizing" classname="collections.StripedHashmapTests" time="0.007"/>
-  <testcase name="eight threads add, eight threads remove" classname="collections.StripedHashmapTests" time="0.171"/>
-  <testcase name="performance test 1" classname="collections.StripedHashmapTests" time="0.319"/>
-  <testcase name="performance test 2" classname="collections.StripedHashmapTests" time="0.767"/>
+  <testcase name="trivial test" classname="collections.StripedHashmapTests" time="0.076"/>
+  <testcase name="eight threads add" classname="collections.StripedHashmapTests" time="0.843"/>
+  <testcase name="no deadlock in concurrent resize" classname="collections.StripedHashmapTests" time="0.172"/>
+  <testcase name="one thread adds, one thread removes" classname="collections.StripedHashmapTests" time="0.153"/>
+  <testcase name="size changes must not be observed during resizing" classname="collections.StripedHashmapTests" time="0.011"/>
+  <testcase name="eight threads add, eight threads remove" classname="collections.StripedHashmapTests" time="0.566"/>
+  <testcase name="performance test 1" classname="collections.StripedHashmapTests" time="0.517"/>
+  <testcase name="performance test 2" classname="collections.StripedHashmapTests" time="1.43"/>
   <testcase name="test entries initially empty" classname="collections.StripedHashmapTests" time="0.0"/>
-  <testcase name="test entries after some putting, removing and setting" classname="collections.StripedHashmapTests" time="0.002"/>
-  <testcase name="test size after put" classname="collections.StripedHashmapTests" time="0.0"/>
+  <testcase name="test entries after some putting, removing and setting" classname="collections.StripedHashmapTests" time="0.012"/>
+  <testcase name="test size after put" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test entries after some setting" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test contains after put" classname="collections.StripedHashmapTests" time="0.0"/>
-  <testcase name="test contains when empty" classname="collections.StripedHashmapTests" time="0.0"/>
+  <testcase name="test contains when empty" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test remove when empty" classname="collections.StripedHashmapTests" time="0.0"/>
   <testcase name="test remove after put" classname="collections.StripedHashmapTests" time="0.0"/>
   <testcase name="test entries after some setting (collision prone)" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test size when empty" classname="collections.StripedHashmapTests" time="0.0"/>
-  <testcase name="test get returns latest value" classname="collections.StripedHashmapTests" time="0.0"/>
+  <testcase name="test get returns latest value" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test entries after some putting" classname="collections.StripedHashmapTests" time="0.001"/>
   <testcase name="test get returns null" classname="collections.StripedHashmapTests" time="0.0"/>
   <testcase name="test entries after some putting (collision prone)" classname="collections.StripedHashmapTests" time="0.001"/>
-  <testcase name="test entries after some putting, removing and setting (collision prone)" classname="collections.StripedHashmapTests" time="0.002"/>
+  <testcase name="test entries after some putting, removing and setting (collision prone)" classname="collections.StripedHashmapTests" time="0.003"/>
   <system-out><![CDATA[Repeat run 1 of 8
 Repeat run 2 of 8
 Repeat run 3 of 8
