@@ -19,7 +19,7 @@ data class ResizingArrayList<T>(
 
     private fun resize(numOfElsToAdd: Int) {
         if (size + numOfElsToAdd <= backingArray.size) return
-        val newArray: Array<T?> = arrayOfNulls<Any?>((backingArray.size shl 1).coerceAtLeast(numOfElsToAdd)) as Array<T?>
+        val newArray: Array<T?> = arrayOfNulls<Any?>((backingArray.size shl 1).coerceAtLeast(size + numOfElsToAdd)) as Array<T?>
         for (i in 0 until backingArray.size) newArray[i] = backingArray[i]
         backingArray = newArray
     }
